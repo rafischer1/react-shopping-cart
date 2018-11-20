@@ -5,8 +5,6 @@ import Nav from './header-footer/Nav'
 import CartFooter from './header-footer/CartFooter'
 import Total from './total/Total'
 
-
-
 export default class App extends React.Component {
     constructor(props) {
         super(props)
@@ -23,12 +21,10 @@ export default class App extends React.Component {
 
     addItem = ( {myEl, quantity} ) => {
         let cartCopy = [...this.state.cart]
-    //   console.log('hi', myEl, quantity)
         // set next max id
         const maxId = this.state.cart
             .reduce((acc, el) => Math.max(acc, el.id), 0)
         const nextMaxId = maxId + 1
-        // console.log(myEl, quantity, nextMaxId)
         // now add the newItem
         for (let i=0; i < this.state.cart.length; i++) {
             if (this.state.cart[i].product.id === myEl.id) {
@@ -53,11 +49,12 @@ export default class App extends React.Component {
     }
 
     render() {
- 
+
       const cStyle = {
         border: '2px solid black',
         fontSize: "20px",
-        marginLeft: '4%'
+        marginLeft: '4%',
+        marginTop: "2%"
       }
 
       return (
