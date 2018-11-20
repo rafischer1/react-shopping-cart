@@ -21,14 +21,6 @@ export default class AddItem extends React.Component {
         }
     }
 
-    // queryData = (itemName) => {
-    //     this.state.product.forEach((el) => {
-    //         if (el.name === itemName) {
-    //             return el
-    //         }
-    //     })
-    // }
-
     onSubmit = (e) => {
         let myEl = {}
         e.preventDefault()
@@ -38,7 +30,6 @@ export default class AddItem extends React.Component {
             }
         }
 
-        
         const { name, quantity } = this.state
         console.log('onsubmit:', name, quantity)
         const { addItem } = this.props
@@ -72,12 +63,12 @@ export default class AddItem extends React.Component {
     render() {
         return (
             <form onSubmit={this.onSubmit}>
-                <label> Name: </label>
+              <label> Name: </label>
                 <select id="product" onChange={this.onNameChange}>
                     {this.state.product.map((x, y) => <Product id={y} key={y} item={x} />)}
                 </select>
                 <br />
-                <label> Quantity: </label>
+              <label> Quantity: </label>
                 <input type="number" value={this.state.quantity} onChange={this.onQuantChange} />
                 <br />
                 <input type="submit" />

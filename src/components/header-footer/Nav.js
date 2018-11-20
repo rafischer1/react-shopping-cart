@@ -11,8 +11,10 @@ export default class Nav extends React.Component {
         }
         return (
          <nav style={navStyle} className = "navbar navbar-dark">
-           <a style={aStyle} className= "navbar-brand" href= "/">Shopping Cart</a>   
-          </nav> 
+           <a style={aStyle} className= "navbar-brand" href= "/">
+           Shopping Cart
+           </a>   
+         </nav> 
         )
     }
 }

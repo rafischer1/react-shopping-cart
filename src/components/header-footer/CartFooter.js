@@ -2,13 +2,13 @@ import React from 'react'
 
 export default class CartFooter extends React.Component {
     render() {
-        var footerStyle = {
+        const footerStyle = {
             marginTop: "5%",
             backgroundColor: '#6ECB83',
             width: '100%'
         }
 
-        var aStyle = {
+        const aStyle = {
             color: 'black'
         }
         return (
