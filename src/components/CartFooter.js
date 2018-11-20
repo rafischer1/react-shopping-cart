@@ -2,9 +2,18 @@ import React from 'react';
 
 class CartFooter extends React.Component {
     render() {
+        var footerStyle = {
+            marginTop: "5%",
+            backgroundColor: '#6ECB83',
+            width: '100%'
+        }
+
+        var aStyle = {
+            color: 'black'
+        }
         return (
-        <nav className = "navbar navbar-dark bg-dark">
-            <a className = "navbar-brand"
+        <nav style={footerStyle} className = "navbar navbar-dark">
+            <a style={aStyle} className = "navbar-brand"
             href = "/" >{this.props.copy}{this.props.year}</a> 
              </nav>
         )

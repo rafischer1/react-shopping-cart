@@ -1,21 +1,20 @@
 import React from 'react';
 
-
-
 class Nav extends React.Component {
     render() {
+        var navStyle = {
+            backgroundColor: '#6ECB83',
+            color: 'darkgrey'
+        }
+        var aStyle = {
+            color: 'black'
+        }
         return (
-         <nav className = "navbar navbar-dark bg-primary">
-           <a className= "navbar-brand" href= "/"> Shopping Cart </a>   
-          </nav>
-          
-          
-          
+         <nav style={navStyle} className = "navbar navbar-dark">
+           <a style={aStyle} className= "navbar-brand" href= "/"> Shopping Cart </a>   
+          </nav> 
         )
     }
 }
-
-
-
 
 export default Nav;

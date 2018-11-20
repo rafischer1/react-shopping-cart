@@ -3,7 +3,7 @@ import CartItemsList from './CartItemsList'
 import ProductsList from './ProductsList'
 import Nav from './Nav'
 import CartFooter from './CartFooter'
-
+import AddItem from './AddItem'
 
 
 class App extends React.Component {
@@ -61,29 +61,5 @@ class App extends React.Component {
 
 }
 
-function AddItem(ev) {
-    ev.preventDefault()
-    alert(this.cart)
-
-    // let itemName = ev.target[1].value
-    // //loop through cart and match name if !match add it
-    // this.state.cart.forEach((el) => {
-    //     if (el.product.name === itemName) {
-    //         el.quantity += ev.target[0].value
-    //     } else {
-    //         alert('hi')
-    //add new object`
-    //using event.target[1].value get the values from products
-    // newProduct = {
-    //     product: {
-    //         id: ,
-    //         name: event.target[1].value,
-    //         priceInCents: ,
-    //     },
-    //     quantity: event.target[0].value
-    // }
-    // }
-    // })
-}
 
 export default App;
