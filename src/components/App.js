@@ -28,33 +28,31 @@ class App extends React.Component {
         ]
     }  
 }
-       render() {
-         return (
-           <div className="container">
-                 <Nav />
-             <h1>Cart Items</h1>
-               <div className="list-group">
-                <div className="list-group-item">
-                <div className="row">
-                <div className="col-md-8">Product</div>
-                <div className="col-md-2">Price</div>
-                <div className="col-md-2">Quantity</div>
-              </div>
+    render() {
+      return (
+      <div className="container">
+        <Nav />
+        <h1>Cart Items</h1>
+          <div className="list-group">
+            <div className="list-group-item">
+            <div className="row">
+              <div className="col-md-8">Product</div>
+              <div className="col-md-2">Price</div>
+              <div className="col-md-2">Quantity</div>
             </div>
-            <div>
             <CartItemsList items={this.state.cart} />
             </div>
-        </div>
-        <br />
+          </div>
+          <br />
         <form onSubmit={AddItem}>
-         <label for="quantity">Quantity</label>
-        <input id="quantity" type="number"></input>
-        <br />
-        <label for="products">Products</label>        
-        <ProductsList items={this.state.products} />
-       <br />
-        <input className="button" type="submit" value="Submit" />         
-      </form>
+          <label for="quantity">Quantity</label>
+          <input id="quantity" type="number"></input>
+          <br />
+          <label for="products">Products</label>        
+          <ProductsList items={this.state.products} />
+          <br />
+          <input className="button" type="submit" value="Submit" />         
+        </form>
         <CartFooter />
       </div>
            )
