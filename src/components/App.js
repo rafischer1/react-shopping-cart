@@ -5,6 +5,7 @@ import Nav from './Nav'
 import CartFooter from './CartFooter'
 
 
+
 class App extends React.Component {
     constructor(props) {
         super(props)
@@ -51,7 +52,7 @@ class App extends React.Component {
           <label for="products">Products</label>        
           <ProductsList items={this.state.products} />
           <br />
-          <input className="button" type="submit" value="Submit" />         
+          <input className="button" type="submit" value="Submit" />      
         </form>
         <CartFooter />
       </div>
@@ -71,7 +72,7 @@ function AddItem(ev) {
     //         el.quantity += ev.target[0].value
     //     } else {
     //         alert('hi')
-    //add new object
+    //add new object`
     //using event.target[1].value get the values from products
     // newProduct = {
     //     product: {

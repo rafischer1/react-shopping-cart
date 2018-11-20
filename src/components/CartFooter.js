@@ -5,7 +5,7 @@ class CartFooter extends React.Component {
         return (
         <nav className = "navbar navbar-dark bg-dark">
             <a className = "navbar-brand"
-            href = "#" >{this.props.copy}{this.props.year}</a> 
+            href = "/" >{this.props.copy}{this.props.year}</a> 
              </nav>
         )
     }
