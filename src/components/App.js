@@ -10,7 +10,7 @@ import Total from './total/Total'
 export default class App extends React.Component {
     constructor(props) {
         super(props)
-    
+
     this.state = { 
         item: 'Mediocre Iron Watch',
         cart: [
@@ -53,9 +53,23 @@ export default class App extends React.Component {
     }
 
     render() {
+        
+      const cStyle = {
+        border: '2px solid black',
+        fontSize: "20px",
+        marginLeft: '4%'
+      }
+
       return (
       <div className="container">
         <Nav />
+              <div className="collection-item" style={cStyle}>
+                  <div className="row">
+                      <div className="col-md-8">Product</div>
+                      <div className="col-md-2">$</div>
+                      <div className="col-md-2">#</div>
+                  </div>
+              </div>
         <CartItemsList items={this.state.cart} />
         <Total items={this.state.cart}/>
         <div className="submitForm">
