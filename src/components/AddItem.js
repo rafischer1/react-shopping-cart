@@ -25,4 +25,9 @@ const AddItem = (ev) => {
     // })
 }
 
+AddItem.defaultProps = {
+    name: 'hi',
+    quantity: 2 
+}
+
 export default AddItem

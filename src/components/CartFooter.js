@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 class CartFooter extends React.Component {
     render() {
@@ -25,4 +25,4 @@ CartFooter.defaultProps = {
     year: 2018
 }
 
-export default CartFooter;
+export default CartFooter

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Product from './Product'
 
 const ProductsList = ({ items }) => (
@@ -7,4 +7,4 @@ const ProductsList = ({ items }) => (
     </select>
 )
 
-export default ProductsList;
+export default ProductsList

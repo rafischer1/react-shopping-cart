@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const CartItems = ({item}) => (
     <div className="collection-item">
@@ -10,4 +10,4 @@ const CartItems = ({item}) => (
     </div>
 )
 
-export default CartItems;
+export default CartItems
