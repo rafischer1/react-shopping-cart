@@ -1,9 +1,9 @@
 import React from 'react';
-import CartItemsList from './CartItemsList'
-import ProductsList from './ProductsList'
-import Nav from './Nav'
-import CartFooter from './CartFooter'
-import AddItem from './AddItem'
+import CartItemsList from './cart-items/CartItemsList'
+import AddItem from './new-items/AddItem'
+import Nav from './header-footer/Nav'
+import CartFooter from './header-footer/CartFooter'
+
 
 
 export default class App extends React.Component {
@@ -29,31 +29,46 @@ export default class App extends React.Component {
         ]
     }  
 }
+
+    // make a function onDeleteItem in the app
+    onDeleteItem = ({ id }) => {
+        // don't mutate the array! make a new array with all the items !== id
+        const newItems = this.state.items.filter((item) => item.id !== id)
+        // console.log('will delete:', id)
+        this.setState({
+            //first copy the old state
+            ...this.state,
+            items: newItems
+        })
+    }
+
+    addItemOnSubmit = (e) => {
+      console.log('hi')
+
+        //set next max id
+        // const maxId = this.state.products
+        //     .reduce((acc, el) => Math.max(acc, el.id), 0)
+        // const nextMaxId = maxId + 1
+        // // console.log(item, reason, nextMaxId)
+        // // now add the newItem
+        // const newItem = { id: nextMaxId, name, priceInCents }
+        // //create a copy and then incorporate the new Item
+        // const newItems = [...this.state.items, newItem]
+
+        // this.setState({
+        //     ...this.state,
+        //     items: newItems
+        // })
+    }
+
     render() {
       return (
       <div className="container">
         <Nav />
-        <h1>Cart Items</h1>
-          <div className="list-group">
-            <div className="list-group-item">
-            <div className="row">
-              <div className="col-md-8">Product</div>
-              <div className="col-md-2">Price</div>
-              <div className="col-md-2">Quantity</div>
-            </div>
-            <CartItemsList items={this.state.cart} />
-            </div>
-          </div>
-          <br />
-        <form onSubmit={AddItem}>
-          <label for="quantity">Quantity</label>
-          <input id="quantity" type="number"></input>
-          <br />
-          <label for="products">Products</label>        
-          <ProductsList items={this.state.products} />
-          <br />
-          <input className="button" type="submit" value="Submit" />      
-        </form>
+        <CartItemsList items={this.state.cart} onDeleteItem={this.onDeleteItem} />
+        <div className="submitForm">
+          <AddItem onAddItem={this.addItemOnSubmit} />
+        </div>
         <CartFooter />
       </div>
            )
