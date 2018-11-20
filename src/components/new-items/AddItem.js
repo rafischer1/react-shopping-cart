@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductsList from '../product-list/ProductsList'
+import Product from '../product-list/Product'
 
 export default class AddItem extends React.Component {
     constructor(props) {
@@ -21,11 +21,28 @@ export default class AddItem extends React.Component {
         }
     }
 
+    // queryData = (itemName) => {
+    //     this.state.product.forEach((el) => {
+    //         if (el.name === itemName) {
+    //             return el
+    //         }
+    //     })
+    // }
+
     onSubmit = (e) => {
+        let myEl = {}
         e.preventDefault()
+        for (let i=0; i < this.state.product.length; i++) {
+            if(this.state.name === this.state.product[i].name) {
+                myEl = this.state.product[i]
+            }
+        }
+
+        
         const { name, quantity } = this.state
-        const { onAddItem } = this.props
-        onAddItem({ name, quantity })
+        console.log('onsubmit:', name, quantity)
+        const { addItem } = this.props
+        addItem({ myEl, quantity })
 
         //reset the form to empty
         this.setState({
@@ -35,6 +52,7 @@ export default class AddItem extends React.Component {
     }
 
     onQuantChange = (e) => {
+        console.log('additem:', e.target.value)
         e.preventDefault()
         this.setState({
             ...this.state,
@@ -47,6 +65,7 @@ export default class AddItem extends React.Component {
         this.setState({
             ...this.state,
             name: e.target.value
+           
         })
     }
 
@@ -54,9 +73,9 @@ export default class AddItem extends React.Component {
         return (
             <form onSubmit={this.onSubmit}>
                 <label> Name: </label>
-                {/* <input type="text" value={this.state.name} onChange={this.onNameChange} />
-                 */}
-                 <ProductsList items={this.state.product} />
+                <select id="product" onChange={this.onNameChange}>
+                    {this.state.product.map((x, y) => <Product id={y} key={y} item={x} />)}
+                </select>
                 <br />
                 <label> Quantity: </label>
                 <input type="number" value={this.state.quantity} onChange={this.onQuantChange} />
