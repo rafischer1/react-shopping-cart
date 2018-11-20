@@ -1,6 +1,6 @@
 import React from 'react'
 
-class CartFooter extends React.Component {
+export default class CartFooter extends React.Component {
     render() {
         var footerStyle = {
             marginTop: "5%",
@@ -24,5 +24,3 @@ CartFooter.defaultProps = {
     copy: '©',
     year: 2018
 }
-
-export default CartFooter

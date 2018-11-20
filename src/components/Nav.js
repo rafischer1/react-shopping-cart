@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Nav extends React.Component {
+export default class Nav extends React.Component {
     render() {
         var navStyle = {
             backgroundColor: '#6ECB83',
@@ -16,5 +16,3 @@ class Nav extends React.Component {
         )
     }
 }
-
-export default Nav
